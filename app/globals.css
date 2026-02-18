@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  min-height: 100vh;
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+  color: #101828;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.scene-bg {
+  background:
+    radial-gradient(circle at 15% 20%, #d6f5ff 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, #fde0ff 0%, transparent 45%),
+    linear-gradient(150deg, #d5e7ff 0%, #eef5ff 35%, #d6fff1 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dummy-app-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: #0f0f12;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.22),
+    inset 0 -6px 10px rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+  .dummy-app-icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 24px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1280px) {
+  .dummy-app-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 22px;
+  }
 }
