@@ -34,7 +34,10 @@ export default function DateTimeText() {
   );
 
   return (
-    <p className="flex items-center gap-3 text-base font-semibold xl:gap-2 xl:text-xs xl:font-normal">
+    <p
+      className="flex items-center gap-3 text-base font-semibold xl:gap-2 xl:text-xs xl:font-normal"
+      style={{ color: "var(--text-primary)" }}
+    >
       <span className="order-1 xl:order-2">{timeText}</span>
       <span className="hidden order-2 md:inline-block xl:order-1">
         {dateWithWeekdayText}

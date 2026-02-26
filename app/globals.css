@@ -1,40 +1,59 @@
 @import "tailwindcss";
+@custom-variant dark (&.dark);
+
+:root {
+  /* Scene background gradients */
+  --scene-grad-1: #d6f5ff;
+  --scene-grad-2: #fde0ff;
+  --scene-grad-3-from: #d5e7ff;
+  --scene-grad-3-mid: #eef5ff;
+  --scene-grad-3-to: #d6fff1;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: rgba(0, 0, 0, 0.06);
+
+  /* Dock */
+  --dock-bg: rgba(255, 255, 255, 0.55);
+  --dock-border: rgba(255, 255, 255, 0.7);
+  --dock-shadow: rgba(0, 0, 0, 0.08);
+
+  /* Text */
+  --text-primary: #1a1a2e;
+  --text-secondary: #475569;
+
+  /* Toggle */
+  --toggle-bg: rgba(0, 0, 0, 0.08);
+  --toggle-indicator: rgba(255, 255, 255, 0.9);
+  --toggle-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --scene-grad-1: #0a1628;
+  --scene-grad-2: #1a0a2e;
+  --scene-grad-3-from: #0d1b2a;
+  --scene-grad-3-mid: #111827;
+  --scene-grad-3-to: #0a1a1a;
+
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+
+  --dock-bg: rgba(255, 255, 255, 0.1);
+  --dock-border: rgba(255, 255, 255, 0.15);
+  --dock-shadow: rgba(0, 0, 0, 0.4);
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+
+  --toggle-bg: rgba(255, 255, 255, 0.1);
+  --toggle-indicator: rgba(255, 255, 255, 0.15);
+  --toggle-shadow: rgba(0, 0, 0, 0.3);
+}
 
 body {
   min-height: 100vh;
   font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
-  color: #101828;
-}
-
-.scene-bg {
-  background:
-    radial-gradient(circle at 15% 20%, #d6f5ff 0%, transparent 40%),
-    radial-gradient(circle at 85% 25%, #fde0ff 0%, transparent 45%),
-    linear-gradient(150deg, #d5e7ff 0%, #eef5ff 35%, #d6fff1 100%);
-}
-
-.dummy-app-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 18px;
-  background: #0f0f12;
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.22),
-    inset 0 -6px 10px rgba(255, 255, 255, 0.05);
-}
-
-@media (min-width: 768px) {
-  .dummy-app-icon {
-    width: 92px;
-    height: 92px;
-    border-radius: 24px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .dummy-app-icon {
-    width: 84px;
-    height: 84px;
-    border-radius: 22px;
-  }
+  color: var(--text-primary);
 }
