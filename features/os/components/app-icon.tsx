@@ -18,9 +18,7 @@ export default function AppIcon({ color, label, icon }: AppIconProps) {
             "0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -2px 4px rgba(0, 0, 0, 0.1)",
         }}
       >
-        {icon && (
-          <span className="text-white/90 drop-shadow-sm">{icon}</span>
-        )}
+        {icon && <span className="text-white/90 drop-shadow-sm">{icon}</span>}
       </div>
       {label && (
         <span

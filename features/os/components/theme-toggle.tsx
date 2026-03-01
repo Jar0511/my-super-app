@@ -1,14 +1,22 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const themes = [
   {
     key: "light",
-    label: "라이트",
+    label: "\uB77C\uC774\uD2B8",
     icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <circle cx="12" cy="12" r="5" />
         <line x1="12" y1="1" x2="12" y2="3" />
         <line x1="12" y1="21" x2="12" y2="23" />
@@ -23,9 +31,18 @@ const themes = [
   },
   {
     key: "system",
-    label: "시스템",
+    label: "\uC2DC\uC2A4\uD15C",
     icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
         <line x1="8" y1="21" x2="16" y2="21" />
         <line x1="12" y1="17" x2="12" y2="21" />
@@ -34,9 +51,18 @@ const themes = [
   },
   {
     key: "dark",
-    label: "다크",
+    label: "\uB2E4\uD06C",
     icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
     ),
@@ -45,11 +71,8 @@ const themes = [
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) {
+  if (!theme) {
     return (
       <div
         className="flex h-8 w-[6.5rem] items-center rounded-full"
@@ -58,14 +81,13 @@ export default function ThemeToggle() {
     );
   }
 
-  const activeIndex = themes.findIndex((t) => t.key === theme);
+  const activeIndex = Math.max(themes.findIndex((t) => t.key === theme), 0);
 
   return (
     <div
       className="relative flex h-8 w-[6.5rem] items-center rounded-full p-0.5"
       style={{ background: "var(--toggle-bg)" }}
     >
-      {/* Sliding indicator */}
       <div
         className="absolute top-0.5 h-7 w-[calc(100%/3-2px)] rounded-full transition-transform duration-300 ease-in-out"
         style={{

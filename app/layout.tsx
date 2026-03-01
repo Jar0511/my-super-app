@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import DateTimeText from "@/components/datetime-text";
-import ThemeProvider from "@/components/theme-provider";
-import ThemeToggle from "@/components/theme-toggle";
+import ThemeProvider from "@/components/providers/theme-provider";
+import DateTimeText from "@/features/os/components/datetime-text";
+import ThemeToggle from "@/features/os/components/theme-toggle";
 import "./globals.css";
 
 const geistSans = Geist({
